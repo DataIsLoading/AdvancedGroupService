@@ -25,7 +25,7 @@ function AdvancedGroupService:__INTERNALS__()
 	return __INTERNAL__
 end
 
---[[ New Functions ]]--
+--[[ AdvancedGroupService Functions ]]--
 function AdvancedGroupService:GetRankInGroupAsync(userId, groupId)
 	local Groups = AdvancedGroupService:GetGroupsAsync(userId)
 	for _,group in pairs(Groups) do
@@ -128,7 +128,7 @@ function AdvancedGroupService:GetGroupEnemiesAsync(groupId)
 	return GroupEnemies
 end
 
---[[ Old Functions ]]--
+--[[ GroupService Functions ]]--
 function AdvancedGroupService:GetAlliesAsync(groupId)
 	return GroupService:GetAlliesAsync(groupId)
 end
