@@ -116,11 +116,6 @@ function AdvancedGroupService:IsGroupAlly(groupId, targetGroupId)
 	return false
 end
 
-function AdvancedGroupService:GetGroupInfoAsync(groupId)
-	local GroupData = AdvancedGroupService:GetGroupInfoAsync(groupId)
-	return GroupData
-end
-
 function AdvancedGroupService:GetGroupAlliesAsync(groupId)
 	local GroupAlliesPages = AdvancedGroupService:GetAlliesAsync(groupId)
 	local GroupAllies = AdvancedGroupService:__INTERNALS__():PagesToArray(GroupAlliesPages)
