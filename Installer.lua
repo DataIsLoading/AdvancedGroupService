@@ -11,13 +11,13 @@ Example.Source = [[local GroupService = require(game:GetService("ReplicatedStora
 local Players = game:GetService("Players")
 local GroupId = 2651565
 
-Players.PlayerAdded:Connect(function(Player) --> DataIsLoading
+Players.PlayerAdded:Connect(function(Player)
   local GroupRank = GroupService:GetRankInGroupAsync(Player.UserId, GroupId)
   local IsPrimary = GroupService:IsPrimaryGroupAsync(Player.UserId, GroupId)
   local IsInClan  = GroupService:IsInClanAsync(Player.UserId, GroupId)
-  print("Group Rank:", GroupRank) --> Group Rank: Lead Developer
-  print("Is Primary:", IsPrimary) --> Is Primary: true
-  print("Is In Clan:", IsInClan)  --> Is In Clan: false
+  print("Group Rank:", GroupRank)
+  print("Is Primary:", IsPrimary)
+  print("Is In Clan:", IsInClan)
 end)]]
 Example.Parent = game:GetService("ServerScriptService")
 print("Installed.")
