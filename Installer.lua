@@ -7,7 +7,7 @@ Module.Parent = game:GetService("ReplicatedStorage")
 
 local Example = Instance.new("Script")
 Example.Name ="AdvancedGroupService Example"
-Example.Source = [[local GroupService = require(path.to.module)
+Example.Source = [[local GroupService = require(game:GetService("ReplicatedStorage"):WaitForChild("AdvancedGroupService"))
 local Players = game:GetService("Players")
 local GroupId = 2651565
 
