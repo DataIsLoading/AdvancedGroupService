@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>AdvancedGroupServices - API</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+	<script src="main.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<div class="container">
+				<a class="navbar-brand mb-0 h1" href="#">AdvancedGroupServices</a>
+		</div>
+	</nav>
+	<div class="container">
+		<h1>AdvancedGroupService</h1>
+
+		<div class="alert alert-danger" role="alert">
+			<h5 class="alert-heading">NotReplicated</h5>
+			<p>This item is not replicated across Roblox’s server/client boundary.</p>
+		</div>
+		<p>AdvancedGroupService is a service that allows developers to fetch information about a Roblox group from within a game with more accessibility than the GroupService service.</p>
+		<p>The module has a number of useful applications, such as detecting if a player is an ally or enemy upon joining the game without much coding.</p>
+		<br>
+		<div class="card" id="getrankingroupasync">
+			<div class="card-header">
+				<code class="type">int</code>
+				<code class="function-name">
+					GetRankInGroupAsync
+					<span class="arguments-wrap">
+						(
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">userId</span>
+							</span>
+							,
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">groupId</span>
+							</span>
+						)
+					</span>
+				</code>
+				<code class="api-tag">
+					<span>yields</span>
+				</code>
+			</div>
+			<div class="card-body">
+				Returns the player's rank in the group as an integer between 0 and 255, where 0 is a non-member and 255 is the group's owner.
+			</div>
+		</div>
+		<div class="card" id="getroleingroupasync">
+			<div class="card-header">
+				<code class="type">string</code>
+				<code class="function-name">
+					GetRoleInGroupAsync
+					<span class="arguments-wrap">
+						(
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">userId</span>
+							</span>
+							,
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">groupId</span>
+							</span>
+						)
+					</span>
+				</code>
+				<code class="api-tag">
+					<span>yields</span>
+				</code>
+			</div>
+			<div class="card-body">
+				Returns the player's role in the group as a string, or "Guest" if the player isn't part of the group.
+			</div>
+		</div>
+		<div class="card" id="getprimarygroupasync">
+			<div class="card-header">
+				<code class="type">Array</code>
+				<code class="function-name">
+					GetPrimaryGroupAsync
+					<span class="arguments-wrap">
+						(
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">userId</span>
+							</span>
+						)
+					</span>
+				</code>
+				<code class="api-tag">
+					<span>yields</span>
+				</code>
+			</div>
+			<div class="card-body">
+				Returns a dictionary of the primary group the user is in. Returns <code>nil</code> if the user has no primary group set.
+			</div>
+		</div>
+		<div class="card" id="getclanasync">
+			<div class="card-header">
+				<code class="type">Array</code>
+				<code class="function-name">
+					GetClanAsync
+					<span class="arguments-wrap">
+						(
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">userId</span>
+							</span>
+						)
+					</span>
+				</code>
+				<code class="api-tag">
+					<span>yields</span>
+				</code>
+			</div>
+			<div class="card-body">
+				Returns a dictionary of the clan the user is in. Returns <code>nil</code> if the user is in no clan.
+			</div>
+		</div>
+		<div class="card" id="isingroupasync">
+			<div class="card-header">
+				<code class="type">bool</code>
+				<code class="function-name">
+					IsInGroupAsync
+					<span class="arguments-wrap">
+						(
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">userId</span>
+							</span>
+							,
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">groupId</span>
+							</span>
+						)
+					</span>
+				</code>
+				<code class="api-tag">
+					<span>yields</span>
+				</code>
+			</div>
+			<div class="card-body">
+				Rreturns true if the user is in the group. Returns false if otherwise.
+			</div>
+		</div>
+		<div class="card" id="isprimarygroupasync">
+			<div class="card-header">
+				<code class="type">bool</code>
+				<code class="function-name">
+					IsPrimaryGroupAsync
+					<span class="arguments-wrap">
+						(
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">userId</span>
+							</span>
+							,
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">groupId</span>
+							</span>
+						)
+					</span>
+				</code>
+				<code class="api-tag">
+					<span>yields</span>
+				</code>
+			</div>
+			<div class="card-body">
+				Returns true if the user has set the group as primary group. Returns false if otherwise.
+			</div>
+		</div>
+		<div class="card" id="isinclanasync">
+			<div class="card-header">
+				<code class="type">bool</code>
+				<code class="function-name">
+					IsInClanAsync
+					<span class="arguments-wrap">
+						(
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">userId</span>
+							</span>
+							,
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">groupId</span>
+							</span>
+						)
+					</span>
+				</code>
+				<code class="api-tag">
+					<span>yields</span>
+				</code>
+			</div>
+			<div class="card-body">
+				Returns true if the user is in the clan of the given group. Returns false if otherwise.
+			</div>
+		</div>
+		<div class="card" id="isgroupenemy">
+			<div class="card-header">
+				<code class="type">bool</code>
+				<code class="function-name">
+					IsGroupEnemy
+					<span class="arguments-wrap">
+						(
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">groupId</span>
+							</span>
+							,
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">targetGroupId</span>
+							</span>
+						)
+					</span>
+				</code>
+				<code class="api-tag">
+					<span>yields</span>
+				</code>
+			</div>
+			<div class="card-body">
+				Returns true if the group and target group are enemies. Returns false if otherwise.
+			</div>
+		</div>
+		<div class="card" id="isgroupally">
+			<div class="card-header">
+				<code class="type">bool</code>
+				<code class="function-name">
+					IsGroupAlly
+					<span class="arguments-wrap">
+						(
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">groupId</span>
+							</span>
+							,
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">targetGroupId</span>
+							</span>
+						)
+					</span>
+				</code>
+				<code class="api-tag">
+					<span>yields</span>
+				</code>
+			</div>
+			<div class="card-body">
+				Returns true if the group and target group are allies. Returns false if otherwise.
+			</div>
+		</div>
+		<div class="card" id="getgroupalliesasync">
+			<div class="card-header">
+				<code class="type">Array</code>
+				<code class="function-name">
+					GetGroupAlliesAsync
+					<span class="arguments-wrap">
+						(
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">groupId</span>
+							</span>
+						)
+					</span>
+				</code>
+				<code class="api-tag">
+					<span>yields</span>
+				</code>
+			</div>
+			<div class="card-body">
+				This has the same behaviour as <a href="#getalliesasync">GetAlliesAsync</a> except it returns a dictionary.
+			</div>
+		</div>
+		<div class="card" id="getgroupenemiesasync">
+			<div class="card-header">
+				<code class="type">Array</code>
+				<code class="function-name">
+					GetGroupEnemiesAsync
+					<span class="arguments-wrap">
+						(
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">groupId</span>
+							</span>
+						)
+					</span>
+				</code>
+				<code class="api-tag">
+					<span>yields</span>
+				</code>
+			</div>
+			<div class="card-body">
+				This has the same behaviour as <a href="#getenemiesasync">GetEnemiesAsync</a> except it returns a dictionary.
+			</div>
+		</div>
+		<br>
+		<hr>
+		<h4>Inherit from <a href="https://www.robloxdev.com/api-reference/class/GroupService">GroupService</a>:</h4>
+		<br>
+		<div class="card" id="getalliesasync">
+			<div class="card-header">
+				<code class="type">Instance</code>
+				<code class="function-name">
+					GetAlliesAsync
+					<span class="arguments-wrap">
+						(
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">groupId</span>
+							</span>
+						)
+					</span>
+				</code>
+				<code class="api-tag">
+					<span>yields</span>
+				</code>
+			</div>
+			<div class="card-body">
+				Returns a <code><a href="https://www.robloxdev.com/api-reference/class/StandardPages">StandardPages</a></code> object including information on all of the specified group's allies.
+			</div>
+		</div>
+		<div class="card" id="getenemiesasync">
+			<div class="card-header">
+				<code class="type">Instance</code>
+				<code class="function-name">
+					GetEnemiesAsync
+					<span class="arguments-wrap">
+						(
+							<span class="argument">
+								<span class="type">groupId</span>
+								<span class="value">userId</span>
+							</span>
+						)
+					</span>
+				</code>
+				<code class="api-tag">
+					<span>yields</span>
+				</code>
+			</div>
+			<div class="card-body">
+					Returns a <code><a href="https://www.robloxdev.com/api-reference/class/StandardPages">StandardPages</a></code> object including information on all of the specified group's enemies.
+			</div>
+		</div>
+		<div class="card" id="getgroupinfoasync">
+			<div class="card-header">
+				<code class="type">Variant</code>
+				<code class="function-name">
+					GetGroupInfoAsync
+					<span class="arguments-wrap">
+						(
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">groupId</span>
+							</span>
+						)
+					</span>
+				</code>
+				<code class="api-tag">
+					<span>yields</span>
+				</code>
+			</div>
+			<div class="card-body">
+				Returns a table containing information about the given group.
+			</div>
+		</div>
+		<div class="card" id="getgroupsasync">
+			<div class="card-header">
+				<code class="type">Array</code>
+				<code class="function-name">
+					GetGroupsAsync
+					<span class="arguments-wrap">
+						(
+							<span class="argument">
+								<span class="type">int64</span>
+								<span class="value">userId</span>
+							</span>
+						)
+					</span>
+				</code>
+				<code class="api-tag">
+					<span>yields</span>
+				</code>
+			</div>
+			<div class="card-body">
+				Returns a list of tables containing information on all of the groups a given player is a member of.
+			</div>
+		</div>
+	</div>
+	<!-- Load jQuery, Popper.js and BootstrapJS-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

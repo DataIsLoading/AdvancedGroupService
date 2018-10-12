@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,700');
+
+.type {
+	font-family: 'Source Code Pro', monospace;
+	color: rgb(73, 160, 120);
+}
+
+.function-name {
+	font-family: 'Source Code Pro', monospace;
+	font-weight: 700;
+	color: rgb(103, 97, 168);
+}
+
+.arguments-wrap {
+	color: rgb(102, 117, 128);
+	font-weight: 400;
+}
+
+.arguments-wrap .argument {
+	font-weight: 400;
+}
+.arguments-wrap .argument.type {
+	color: rgb(73, 160, 120);
+	font-weight: 500;
+}
+.arguments-wrap .argument.value {
+	font-weight: 400;
+}
+
+.api-tag {
+	font-family: 'Source Code Pro', monospace;
+	font-weight: 500;
+	color: rgb(102, 117, 128);
+}
+
+.api-tag span::before {
+	content: '[';
+}
+.api-tag span::after {
+	content: ']';
+}
+.api-tag span {
+	text-transform: lowercase;
+	border-bottom: 1px dashed rgb(102, 117, 128);
+}
+
+.card {
+	margin-bottom: 10px;
+}
+
+code {
+	color: rgb(68, 76, 86);
+	font-size: 14px;
+	background-color: rgb(251, 252, 253);
+	font-family: 'Source Code Pro', monospace;
+	line-height: 19px;
+	display: inline-block;
+	word-break: break-all;
+	padding: 2px 6px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(233, 237, 240);
+	border-image: initial;
+	border-radius: 3px;
+}

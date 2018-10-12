@@ -26,4 +26,4 @@ end)
 ```
 
 ## API
-The API can be found [here](http://www.dataisloading.xyz/AdvancedGroupService/api-reference/class/AdvancedGroupService).
+The API can be found [here](http://www.dataisloading.xyz/AdvancedGroupService/).
