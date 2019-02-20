@@ -1,7 +1,7 @@
 --[[
 	// Name:   AdvancedGroupService
-	// Author: Sebastian Erik Bauer (DataIsLoading)
-	// Date:   06/01/2019
+	// Author: Sebastian Erik Bauer (SimplyData)
+	// Date:   20/02/2019
 --]]
 local GroupService = { }
 local RbxGroupService = game:GetService("GroupService")
