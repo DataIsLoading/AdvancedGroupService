@@ -48,17 +48,6 @@ function GroupService:GetPrimaryGroupAsync(Player)
 	return nil
 end
 
-function GroupService:GetClanAsync(Player)
-	local Groups = GroupService:GetGroupsAsync(Player)
-	for Index = 1, #Groups do
-		local Group = Groups[Index]
-		if Group.IsInClan then
-			return Group
-		end
-	end
-	return nil
-end
-
 function GroupService:IsInGroupAsync(Player, GroupID)
 	local Groups = GroupService:GetGroupsAsync(Player)
 	for Index = 1, #Groups do
@@ -73,16 +62,6 @@ function GroupService:IsPrimaryGroupAsync(Player)
 	local Groups = GroupService:GetGroupsAsync(Player)
 	for Index = 1, #Groups do
 		if Groups[Index].IsPrimary then
-			return true
-		end
-	end
-	return false
-end
-
-function GroupService:IsInClanAsync(Player)
-	local Groups = GroupService:GetGroupsAsync(Player)
-	for Index = 1, #Groups do
-		if Groups[Index].IsInClan then
 			return true
 		end
 	end
