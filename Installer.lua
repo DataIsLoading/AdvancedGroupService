@@ -10,9 +10,9 @@ print("Importing 'GroupService.lua'")
 local Online = NewModule("GroupService")
 Online.Source = GetAsync("GroupService.lua")
 
-print("Importing 'GroupServiceOffline.lua'")
-local Offline = NewModule("GroupServiceOffline")
-Offline.Source = GetAsync("GroupServiceOffline.lua")
+print("Importing 'GroupService_Offline.lua'")
+local Offline = NewModule("GroupService_Offline")
+Offline.Source = GetAsync("GroupService_Offline.lua")
 
 print("Importing 'Example.lua'")
 local Example = NewScript("Example")
