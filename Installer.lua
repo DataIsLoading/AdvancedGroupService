@@ -2,13 +2,9 @@ local HttpService = game:GetService("HttpService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerScriptService = game:GetService("ServerScriptService")
 
-local _print = print
 local NewModule = function(name, parent) local _inst = Instance.new("ModuleScript") _inst.Name = name or "Unnamed" _inst.Parent = parent or ReplicatedStorage return _inst end
 local NewScript = function(name, parent) local _inst = Instance.new("Script") _inst.Name = name or "Unnamed" _inst.Parent = parent or ServerScriptService return _inst end
 local GetAsync = function(path) return HttpService:GetAsync("https://raw.githubusercontent.com/DataIsLoading/AdvancedGroupService/master/" .. path) end
-local function print(...)
-  rprint("[GroupService Installer]", ...)
-end
 --------------------------------
 print("Importing 'GroupService.lua'")
 local Online = NewModule("GroupService")
