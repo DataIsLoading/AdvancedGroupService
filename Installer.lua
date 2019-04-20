@@ -1,23 +1,24 @@
-print("Installing..")
 local HttpService = game:GetService("HttpService")
-local Module = Instance.new("ModuleScript")
-Module.Name = "AdvancedGroupService"
-Module.Source = HttpService:GetAsync("https://raw.githubusercontent.com/DataIsLoading/AdvancedGroupService/master/AdvancedGroupService.lua")
-Module.Parent = game:GetService("ReplicatedStorage")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local ServerScriptService = game:GetService("ServerScriptService")
 
-local Example = Instance.new("Script")
-Example.Name ="AdvancedGroupService Example"
-Example.Source = [[local GroupService = require(game:GetService("ReplicatedStorage"):WaitForChild("AdvancedGroupService"))
-local Players = game:GetService("Players")
-local GroupId = 2651565
+local _print = print
+local NewModule = function(name, parent) local _inst = Instance.new("ModuleScript") _inst.Name = name or "Unnamed" _inst.Parent = parent or ReplicatedStorage return _inst end
+local NewScript = function(name, parent) local _inst = Instance.new("Script") _inst.Name = name or "Unnamed" _inst.Parent = parent or ServerScriptService return _inst end
+local function print(...)
+  print("[GroupService Installer]", ...)
+end
+--------------------------------
+print("Importing 'GroupService.lua'")
+local Online = NewModule("GroupService")
+Online.Source = GetAsync("GroupService.lua")
 
-Players.PlayerAdded:Connect(function(Player)
-  local GroupRank = GroupService:GetRankInGroupAsync(Player.UserId, GroupId)
-  local IsPrimary = GroupService:IsPrimaryGroupAsync(Player.UserId, GroupId)
-  local IsInClan  = GroupService:IsInClanAsync(Player.UserId, GroupId)
-  print("Group Rank:", GroupRank)
-  print("Is Primary:", IsPrimary)
-  print("Is In Clan:", IsInClan)
-end)]]
-Example.Parent = game:GetService("ServerScriptService")
-print("Installed.")
+print("Importing 'GroupServiceOffline.lua'")
+local Offline = NewModule("GroupServiceOffline")
+Offline.Source = GetAsync("GroupServiceOffline.lua")
+
+print("Importing 'Example.lua'")
+local Example = NewScript("Example")
+Example.Source = GetAsync("Example.lua")
+
+print("Imported all Modules.")
