@@ -1,12 +1,12 @@
-# AdvancedGroupService
+# Extended GroupService
 A module for Roblox that replaces the current GroupService with many more functions.
 
-AdvancedGroupService replaces the current GroupService and adds many more functions like `:GetRankInGroupAsync` which gets the users group rank, and that without caching.
+Extended GroupService replaces the current GroupService and adds many more functions like `:GetRankInGroupAsync` which gets the users group rank, and that without caching.
 
 ## How to use
 You can either use the Installer (below), which you use over your command bar or insert it manually into your game.
 ```lua
-loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/RealSimplyData/AdvancedGroupService/master/Installer.lua"))()
+loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/RealSimplyData/ExtendedGroupService/master/Installer.lua"))()
 ```
 
 ## Example
@@ -40,4 +40,4 @@ end
 ```
 
 ## API
-The API can be found [here](https://realsimplydata.github.io/AdvancedGroupService/?v=1).
+The API can be found [here](https://realsimplydata.github.io/ExtendedGroupService/?v=1).
