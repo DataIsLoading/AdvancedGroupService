@@ -6,7 +6,7 @@ AdvancedGroupService replaces the current GroupService and adds many more functi
 ## How to use
 You can either use the Installer (below), which you use over your command bar or insert it manually into your game.
 ```lua
-loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/DataIsLoading/AdvancedGroupService/master/Installer.lua"))()
+loadstring(game:GetService("HttpService"):GetAsync("https://raw.githubusercontent.com/RealSimplyData/AdvancedGroupService/master/Installer.lua"))()
 ```
 
 ## Example
