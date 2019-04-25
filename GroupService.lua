@@ -101,7 +101,8 @@ function GroupService:GetEnemiesAsync(GroupID)
 end
 
 function GroupService:GetGroupsAsync(Player)
-	local Success, Groups = pcall(RbxGroupService.GetGroupsAsync, RbxGroupService, Player.UserId)
+	local UserId = (typeof(Player) == "Instance" and Player:IsA("Player")) and Player.UserId or typeof(Player) == "number" and Player
+	local Success, Groups = pcall(RbxGroupService.GetGroupsAsync, RbxGroupService, UserId)
 	return Success and Groups or { }
 end
 
