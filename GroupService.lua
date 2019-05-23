@@ -9,10 +9,12 @@ local RbxGroupService = game:GetService("GroupService")
 local function PagesToArray(Pages)
 	local Array = { }
 	while true do
-		for _, Value in next, Pages:GetCurrentPage() do Array[#Array + 1] = Value end
+		local CurrentnPage = Pages:GetCurrentPage()
+		for Index = 1, #CurrentPage do Array[#Array + 1] = CurrentPage[Index] end
 		if Pages.IsFinished then break end
 		pcall(Pages.AdvanceToNextPageAsync, Pages)
 	end
+	return Array
 end
 
 function GroupService:GetRankInGroupAsync(Player, GroupID)
@@ -101,7 +103,7 @@ function GroupService:GetEnemiesAsync(GroupID)
 end
 
 function GroupService:GetGroupsAsync(Player)
-	local UserId = (typeof(Player) == "Instance" and Player:IsA("Player")) and Player.UserId or typeof(Player) == "number" and Player
+	local UserId = (typeof(Player) == "Instance" and Player:IsA("Player")) and Player.UserId or type(Player) == "number" and Player
 	local Success, Groups = pcall(RbxGroupService.GetGroupsAsync, RbxGroupService, UserId)
 	return Success and Groups or { }
 end
