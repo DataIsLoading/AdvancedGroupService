@@ -33,7 +33,7 @@
 					<span class="arguments-wrap">
 						(
 							<span class="argument">
-								<span class="type">int64</span>
+								<span class="type">int64/Player</span>
 								<span class="value">Player</span>
 							</span>
 							,
@@ -60,7 +60,7 @@
 					<span class="arguments-wrap">
 						(
 							<span class="argument">
-								<span class="type">int64</span>
+								<span class="type">int64/Player</span>
 								<span class="value">Player</span>
 							</span>
 							,
@@ -87,7 +87,7 @@
 					<span class="arguments-wrap">
 						(
 							<span class="argument">
-								<span class="type">int64</span>
+								<span class="type">int64/Player</span>
 								<span class="value">Player</span>
 							</span>
 						)
@@ -101,28 +101,6 @@
 				Returns a dictionary of the primary group the user is in. Returns <code>nil</code> if the user has no primary group set.
 			</div>
 		</div>
-		<div class="card" id="getclanasync">
-			<div class="card-header">
-				<code class="type">Array</code>
-				<code class="function-name">
-					GetClanAsync
-					<span class="arguments-wrap">
-						(
-							<span class="argument">
-								<span class="type">int64</span>
-								<span class="value">Player</span>
-							</span>
-						)
-					</span>
-				</code>
-				<code class="api-tag">
-					<span>yields</span>
-				</code>
-			</div>
-			<div class="card-body">
-				Returns a dictionary of the clan the user is in. Returns <code>nil</code> if the user is in no clan.
-			</div>
-		</div>
 		<div class="card" id="isingroupasync">
 			<div class="card-header">
 				<code class="type">bool</code>
@@ -131,7 +109,7 @@
 					<span class="arguments-wrap">
 						(
 							<span class="argument">
-								<span class="type">int64</span>
+								<span class="type">int64/Player</span>
 								<span class="value">Player</span>
 							</span>
 							,
@@ -158,7 +136,7 @@
 					<span class="arguments-wrap">
 						(
 							<span class="argument">
-								<span class="type">int64</span>
+								<span class="type">int64/Player</span>
 								<span class="value">Player</span>
 							</span>
 							,
@@ -175,60 +153,6 @@
 			</div>
 			<div class="card-body">
 				Returns true if the user has set the group as primary group. Returns false if otherwise.
-			</div>
-		</div>
-		<div class="card" id="isinclanasync">
-			<div class="card-header">
-				<code class="type">bool</code>
-				<code class="function-name">
-					IsInClanAsync
-					<span class="arguments-wrap">
-						(
-							<span class="argument">
-								<span class="type">int64</span>
-								<span class="value">Player</span>
-							</span>
-							,
-							<span class="argument">
-								<span class="type">int64</span>
-								<span class="value">GroupId</span>
-							</span>
-						)
-					</span>
-				</code>
-				<code class="api-tag">
-					<span>yields</span>
-				</code>
-			</div>
-			<div class="card-body">
-				Returns true if the user is in the clan of the given group. Returns false if otherwise.
-			</div>
-		</div>
-		<div class="card" id="isgroupenemy">
-			<div class="card-header">
-				<code class="type">bool</code>
-				<code class="function-name">
-					IsGroupEnemy
-					<span class="arguments-wrap">
-						(
-							<span class="argument">
-								<span class="type">int64</span>
-								<span class="value">GroupId</span>
-							</span>
-							,
-							<span class="argument">
-								<span class="type">int64</span>
-								<span class="value">TargetGroupId</span>
-							</span>
-						)
-					</span>
-				</code>
-				<code class="api-tag">
-					<span>yields</span>
-				</code>
-			</div>
-			<div class="card-body">
-				Returns true if the group and target group are enemies. Returns false if otherwise.
 			</div>
 		</div>
 		<div class="card" id="isgroupally">
@@ -278,28 +202,6 @@
 			</div>
 			<div class="card-body">
 				This has the same behaviour as <a href="#getalliesasync">GetAlliesAsync</a> except it returns a dictionary.
-			</div>
-		</div>
-		<div class="card" id="getgroupenemiesasync">
-			<div class="card-header">
-				<code class="type">Array</code>
-				<code class="function-name">
-					GetGroupEnemiesAsync
-					<span class="arguments-wrap">
-						(
-							<span class="argument">
-								<span class="type">int64</span>
-								<span class="value">GroupId</span>
-							</span>
-						)
-					</span>
-				</code>
-				<code class="api-tag">
-					<span>yields</span>
-				</code>
-			</div>
-			<div class="card-body">
-				This has the same behaviour as <a href="#getenemiesasync">GetEnemiesAsync</a> except it returns a dictionary.
 			</div>
 		</div>
 		<br>
