@@ -78,26 +78,10 @@ function GroupService:IsGroupAlly(GroupID, TargetGroupID)
 	return false
 end
 
-function GroupService:IsGroupEnemy(GroupID, TargetGroupID)
-	local Groups = GroupService:GetGroupEnemiesAsync(GroupID)
-	for Index = 1, #Groups do
-		if Groups[Index].Id == TargetGroupID then
-			return true
-		end
-	end
-	return false
-end
-
 function GroupService:GetGroupAlliesAsync(GroupID)
 	local Success, GroupAlliesPages = pcall(RbxGroupService.GetAlliesAsync, RbxGroupService, GroupID)
 	local GroupAllies = Success and GroupAlliesPages and PagesToArray(GroupAlliesPages)
 	return GroupAllies
-end
-
-function GroupService:GetEnemiesAsync(GroupID)
-	local Success, GroupEnemiesPages = pcall(RbxGroupService.GetEnemiesAsync, RbxGroupService, GroupID)
-	local GroupEnemies = Success and GroupEnemiesPages and PagesToArray(GroupEnemiesPages)
-	return GroupEnemies
 end
 
 function GroupService:GetGroupsAsync(Player)
